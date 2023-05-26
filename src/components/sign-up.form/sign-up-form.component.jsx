@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import {
   createAuthUserWithEmailAndPassword,
-  createUserDocumentFromAuth,
+  createUserDocumentFromAuth
 } from '../../utilities/firebase/firebase.utilities';
 
 import FormInput from '../form-input/form-input.component';
@@ -46,6 +46,7 @@ const SignUpForm = () => {
       );
       //const userAuth = { ...user, displayName: displayName };
       await createUserDocumentFromAuth(user, { displayName });
+      
       resetFormFields();
       //console.log(userAuth);
     } catch (error) {
